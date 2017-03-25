@@ -1,0 +1,9 @@
+.warpper {
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.warpper .main {
+  padding-bottom: 50px;
+}

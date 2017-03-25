@@ -1,1 +1,6 @@
-var app = angular.module("app",["appTemplate"]);
+;(function(){
+    'use strict';
+    angular.module("app",[
+        "router"
+    ]);
+})();

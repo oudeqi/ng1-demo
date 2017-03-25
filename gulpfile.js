@@ -70,7 +70,9 @@ gulp.task("scss:all", function() {
 gulp.task("inject", function() {
     return gulp.src("./src/index.html")
         .pipe(inject(gulp.src("./src/component/**/*.css", {read: false}), {relative: true}))
-        .pipe(inject(gulp.src("./src/component/**/*.js", {read: true}).pipe(angularFilesort()), {relative: true}))
+        .pipe(inject(
+            gulp.src("./src/component/**/*.js", {read: true}).pipe(angularFilesort()), {relative: true}
+        ))
         .pipe(gulp.dest("./src"));
 });
 
@@ -80,7 +82,7 @@ gulp.task("tpl", function() {
     .pipe(ngTemplate({
       moduleName: "appTemplate",
       standalone: true,
-      prefix: "./",
+      prefix: "../",
       filePath: "app-template.js"
     }))
     .pipe(gulp.dest("./src/component/app"));
@@ -117,8 +119,10 @@ function staticWatch(){
         .on("change", function() {gulp.start("scss");})
         .on("unlink", function() {gulp.start("scss");});
 
+    watch(["./src/component/**/*.js"]).on("change", function() {browserSync.reload();});
+
     gulp.watch("./src/index.html").on("change", browserSync.reload);
-    gulp.watch("./src/component/**/*.js").on("change", browserSync.reload);
+
 }
 
 /*开发流程*/

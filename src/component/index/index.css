@@ -1,0 +1,112 @@
+#index .poster {
+  width: 100%;
+  background-color: #ddd;
+  height: 11.25rem;
+  overflow: hidden;
+}
+
+#index .poster img {
+  max-width: 100%;
+  height: auto;
+}
+
+#index .padd-cont .title {
+  padding-top: 1.25rem;
+  font-size: 1.25rem;
+  color: #2B333B;
+  font-weight: normal;
+}
+
+#index .padd-cont .tip {
+  position: relative;
+  z-index: 10;
+}
+
+#index .padd-cont .tip .over {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: 4.375rem;
+  height: 4.375rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+#index .padd-cont .tip .p1 {
+  padding: 0.625rem 0;
+}
+
+#index .padd-cont .tip .p1 .icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.875rem;
+  height: 0.875rem;
+  background: #ddd;
+}
+
+#index .padd-cont .tip .p1 .time {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.875rem;
+  color: #686868;
+}
+
+#index .padd-cont .tip .p1 .status {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 0.875rem;
+  color: #FB4747;
+}
+
+#index .padd-cont .tip .p2 {
+  height: 2.5rem;
+  background: #FDF8E3;
+  border: 1px solid #DACCAF;
+  border-radius: 0.25rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 0.625rem;
+}
+
+#index .padd-cont .tip .p2 .icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  background-color: #ddd;
+  margin-right: 0.5rem;
+}
+
+#index .padd-cont .tip .p2 .status {
+  font-size: 0.875rem;
+  color: #8D5A5A;
+}
+
+#index .padd-cont .table-cont {
+  margin-top: 0.9375rem;
+}
+
+#index .padd-cont .table-cont table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  color: #2B333B;
+  font-size: 0.875rem;
+}
+
+#index .padd-cont .table-cont table th {
+  background: #BDDBFF;
+  padding: 0.5rem;
+  border: 1px solid #BFBFBF;
+  font-weight: normal;
+}
+
+#index .padd-cont .table-cont table td {
+  background: #fff;
+  padding: 0.5rem;
+  border: 1px solid #BFBFBF;
+}

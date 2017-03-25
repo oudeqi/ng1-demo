@@ -1,0 +1,55 @@
+@import "../../assets/scss/_mixin.scss";
+@import "../../assets/scss/_function.scss";
+#footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    .inner{
+        max-width: 640px;
+        min-width: 320px;
+        margin: 0 auto;
+        height: px2rem(50);
+        background: #eee;
+        border-top: 1px solid #BFBFBF;
+        ul{
+            display: flex;
+            height: 100%;
+            li{
+                width: 33.33%;
+                height: 100%;
+                a{
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    text-decoration: none;
+                    .icon{
+                        width: px2rem(24);
+                        height: px2rem(24);
+                        display: block;
+                        background: #ddd;
+                    }
+                    span{
+                        color: #848689;
+                        font-size: px2rem(12);
+                        display: block;
+                        margin-top: 4px;
+                        line-height: 1;
+                    }
+                }
+                a.active{
+                    background-color: #129AEE;
+                    .icon{
+                        background: #fff;;
+                    }
+                    span{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

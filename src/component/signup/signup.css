@@ -1,0 +1,168 @@
+#signup .poster {
+  width: 100%;
+  background-color: #ddd;
+  height: 11.25rem;
+  overflow: hidden;
+}
+
+#signup .poster img {
+  max-width: 100%;
+  height: auto;
+}
+
+#signup .time {
+  background: #EBEBEB;
+  border-bottom: 1px dashed #BFBFBF;
+}
+
+#signup .time p {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 0.9375rem;
+  font-size: 0.9375rem;
+  color: #2B333B;
+}
+
+#signup .time p .icon {
+  width: 0.875rem;
+  height: 0.875rem;
+  background: #ddd;
+  margin-right: 6px;
+}
+
+#signup .time p:first-child {
+  padding-top: 0.875rem;
+}
+
+#signup .time p:last-child {
+  padding-top: 0.375rem;
+  padding-bottom: 0.625rem;
+}
+
+#signup .padd-cont {
+  padding-bottom: 2.5rem;
+}
+
+#signup .padd-cont .form-group {
+  margin-top: 20px;
+}
+
+#signup .padd-cont .form-group .form-label {
+  color: #2B333B;
+}
+
+#signup .padd-cont .form-group .pic-view-list {
+  margin-top: 8px;
+}
+
+#signup .padd-cont .form-group .pic-view-list:after {
+  content: "";
+  display: block;
+  height: 0;
+  font-size: 0;
+  overflow: hidden;
+  line-height: 0;
+  clear: both;
+}
+
+#signup .padd-cont .form-group .pic-view-list li {
+  float: left;
+  width: 33.33%;
+  padding: 0 2px;
+}
+
+#signup .padd-cont .form-group .pic-view-list li .inner {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+
+#signup .padd-cont .form-group .pic-view-list li .inner .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ddd;
+  overflow: hidden;
+}
+
+#signup .padd-cont .form-group .pic-view-list li .inner .content button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#signup .padd-cont .form-group .pic-view-list li .inner .content img {
+  max-width: 100%;
+  height: auto;
+}
+
+#signup .padd-cont .form-group .pic-view-list li:first-child {
+  padding-right: 4px;
+  padding-left: 0;
+}
+
+#signup .padd-cont .form-group .pic-view-list li:last-child {
+  padding-right: 0;
+  padding-left: 4px;
+}
+
+#signup .padd-cont .form-group .form-tip {
+  font-size: 0.875rem;
+  line-height: 1;
+  padding-top: 10px;
+  color: #848689;
+}
+
+#signup .padd-cont .form-group .form-ipt {
+  margin-top: 8px;
+}
+
+#signup .padd-cont .form-group .form-ipt input {
+  height: 2.75rem;
+  width: 100%;
+  border: 1px solid #BFBFBF;
+  border-radius: 0.125rem;
+  padding-left: 0.625rem;
+}
+
+#signup .padd-cont .form-group .form-ipt input:focus {
+  border: 1px solid #129AEE;
+}
+
+#signup .padd-cont .form-group .form-ipt textarea {
+  width: 100%;
+  border: 1px solid #BFBFBF;
+  border-radius: 0.125rem;
+  padding: 0.25rem 0.625rem;
+  resize: vertical;
+}
+
+#signup .padd-cont .form-group .form-ipt textarea:focus {
+  border: 1px solid #129AEE;
+}
+
+#signup .padd-cont .form-group .form-btn {
+  height: 3rem;
+  width: 100%;
+  color: #fff;
+  background: #129AEE;
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  border: 0;
+}
+
+#signup .padd-cont .form-group .form-btn:active {
+  opacity: 0.8;
+}
