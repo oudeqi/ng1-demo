@@ -4,4 +4,5 @@
 dist/
 node_modules/
 src/assets/scss/_sprite.scss
+src/assets/image/sprite.png
 ##############################
