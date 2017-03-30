@@ -1,15 +1,17 @@
-<div id="signup">
+<div id="signup" ng-controller="signup">
+    <!-- <app-header close="close()" title="详情"></app-header> -->
     <div class="poster">
-        <img src="./assets/image/poster.jpg" alt="">
+        <img ng-src="{{detail.coverPhoto}}" alt="">
     </div>
     <div class="time">
         <p>
             <i class="icon"></i>
-            <span>报名时间 2017/10/17-2017/12/12</span>
+            <span>报名时间 {{detail.signupStart | date:"yyyy/MM/dd"}} - {{detail.signupEnd | date:"yyyy/MM/dd"}}</span>
         </p>
+        <!-- yyyy/MM/dd HH:mm -->
         <p>
             <i class="icon"></i>
-            <span>投票时间 2017/10/17-2017/12/12</span>
+            <span>投票时间 {{detail.voteStart | date:"yyyy/MM/dd"}} - {{detail.voteEnd | date:"yyyy/MM/dd"}}</span>
         </p>
     </div>
     <div class="padd-cont">
@@ -19,24 +21,48 @@
                 <li>
                     <div class="inner">
                         <div class="content">
-                            <button type="button"></button>
-                            <img src="../../assets/image/head-pic.jpg" alt="">
+                            <button ng-show="pic0" ng-click="delPic(0)" class="delpic" type="button"><i class="icon"></i></button>
+                            <div class="pic-view">
+                                <!-- <img src="../../assets/image/poster.jpg" alt=""> -->
+                            </div>
+                            <div class="addpic" ng-hide="pic0">
+                                <button type="button" name="button">
+                                    <input clean-file-value type="file" name="file" clean-file-value accept="image/*" onchange="angular.element(this).scope().fileChange(this,0)" />
+                                </button>
+                                <p>上传照片</p>
+                            </div>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="inner">
                         <div class="content">
-                            <button type="button"></button>
-                            <img src="../../assets/image/head-pic.jpg" alt="">
+                            <button ng-show="pic1" ng-click="delPic(1)" class="delpic" type="button"><i class="icon"></i></button>
+                            <div class="pic-view">
+                                <!-- <img src="../../assets/image/poster.jpg" alt=""> -->
+                            </div>
+                            <div class="addpic" ng-hide="pic1">
+                                <button type="button" name="button">
+                                    <input clean-file-value type="file" name="file" clean-file-value accept="image/*" onchange="angular.element(this).scope().fileChange(this,1)" />
+                                </button>
+                                <p>上传照片</p>
+                            </div>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="inner">
                         <div class="content">
-                            <button type="button"></button>
-                            <img src="../../assets/image/head-pic.jpg" alt="">
+                            <button ng-show="pic2" ng-click="delPic(2)" class="delpic" type="button"><i class="icon"></i></button>
+                            <div class="pic-view">
+                                <!-- <img src="../../assets/image/poster.jpg" alt=""> -->
+                            </div>
+                            <div class="addpic" ng-hide="pic2">
+                                <button type="button" name="button">
+                                    <input clean-file-value type="file" name="file" clean-file-value accept="image/*" onchange="angular.element(this).scope().fileChange(this,2)" />
+                                </button>
+                                <p>上传照片</p>
+                            </div>
                         </div>
                     </div>
                 </li>
@@ -46,23 +72,23 @@
         <div class="form-group">
             <p class="form-label">*姓名：</p>
             <div class="form-ipt">
-                <input type="text" placeholder="请输入参赛人姓名">
+                <input type="text" ng-model="postData.name" placeholder="请输入参赛人姓名">
             </div>
         </div>
         <div class="form-group">
             <p class="form-label">*联系电话：</p>
             <div class="form-ipt">
-                <input type="text" placeholder="请输入联系电话">
+                <input type="text" ng-model="postData.phoneNo" placeholder="请输入联系电话">
             </div>
         </div>
         <div class="form-group">
             <p class="form-label">参赛宣言：</p>
             <div class="form-ipt">
-                <textarea name="name" rows="4" placeholder="请输入想说的话"></textarea>
+                <textarea name="name" rows="4" ng-model="postData.declaration" placeholder="请输入想说的话"></textarea>
             </div>
         </div>
         <div class="form-group">
-            <button class="form-btn" type="button">点击报名</button>
+            <button ng-click="signUp()" class="form-btn" type="button">点击报名</button>
         </div>
     </div>
 </div>

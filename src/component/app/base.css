@@ -6,19 +6,19 @@ html {
 
 @media screen and (min-width: 320px) {
   html {
-    font-size: adaptPx(320);
+    font-size: 13.65333px;
   }
 }
 
 @media screen and (min-width: 360px) {
   html {
-    font-size: adaptPx(360);
+    font-size: 15.36px;
   }
 }
 
 @media screen and (min-width: 375px) {
   html {
-    font-size: adaptPx(375);
+    font-size: 16px;
   }
 }
 
@@ -101,6 +101,7 @@ input[type="number"] {
 }
 
 .look-detail-btn .link {
+  text-decoration: none;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -122,10 +123,13 @@ input[type="number"] {
 }
 
 .look-detail-btn .link .icon {
-  width: 0.875rem;
-  height: 0.875rem;
-  background-color: #ddd;
   margin-right: 5px;
+  display: block;
+  background-image: url("../../assets/image/sprite.png");
+  background-position: -54px -102px;
+  width: 14px;
+  height: 14px;
+  background-size: 120px 120px;
 }
 
 .look-detail-btn .link:active {
@@ -168,10 +172,12 @@ input[type="number"] {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
-  width: 0.875rem;
-  height: 0.875rem;
-  background-color: #ddd;
   margin-right: 0.375rem;
+  background-image: url("../../assets/image/sprite.png");
+  background-position: -66px -68px;
+  width: 20px;
+  height: 20px;
+  background-size: 120px 120px;
 }
 
 .search-btn .ipt input {
@@ -235,14 +241,18 @@ input[type="number"] {
 
 .player-list li .inner .pic {
   height: 12.5rem;
+  width: 100%;
   overflow: hidden;
   border-radius: 0.125rem;
   background-color: #eee;
+  display: block;
 }
 
 .player-list li .inner .pic img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .player-list li .inner .p1 {
@@ -275,6 +285,11 @@ input[type="number"] {
   border-radius: 0.125rem;
 }
 
+.player-list li .inner button:disabled {
+  background-color: #2b333b;
+  cursor: not-allowed;
+}
+
 .player-list li .inner button.notgive {
   background-color: #129AEE;
 }
@@ -285,6 +300,7 @@ input[type="number"] {
 
 .player-list li .inner button.give {
   background-color: #FB4747;
+  cursor: not-allowed;
 }
 
 .load-more {

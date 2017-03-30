@@ -1,0 +1,75 @@
+@import "../../assets/scss/_mixin.scss";
+@import "../../assets/scss/_function.scss";
+@import "../../assets/scss/_sprite.scss";
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    .inner{
+        max-width: 640px;
+        min-width: 320px;
+        margin: 0 auto;
+        height: px2rem(48);
+        background: #fbfbfb;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+        padding: 0 px2rem(2);
+        .btn-cont{
+            flex-shrink: 0;
+            width: px2rem(50);
+            display: flex;
+            a{
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: #666;
+                padding: px2rem(10) px2rem(12);
+                .icon-back{
+                    display: block;
+                    @include sprite($icon-back);
+                }
+                .icon-close{
+                    display: block;
+                    @include sprite($icon-close);
+                }
+                &:active{
+                    .icon{
+                        opacity: 0.5;
+                    }
+                }
+            }
+        }
+        .head-tit{
+            flex-grow: 1;
+            font-size: px2rem(18);
+            color: #2B333B;
+            text-align: center;
+        }
+    }
+}
+
+.app-back{
+    border: 0;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 50%;
+    padding-right: px2rem(4);
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: px2rem(20);
+    left: px2rem(20);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon{
+        display: block;
+        @include sprite($icon-back-white);
+    }
+    &:active{
+        opacity: 0.5;
+    }
+}

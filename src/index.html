@@ -10,31 +10,52 @@
                 display: none !important;
             }
         </style>
-        <!-- build:css /css/app.css -->
+        <!-- build:css /assets/style/app.css -->
         <!-- inject:css -->
         <link rel="stylesheet" href="component/app/base.css">
         <link rel="stylesheet" href="component/footer/footer.css">
+        <link rel="stylesheet" href="component/header/header.css">
         <link rel="stylesheet" href="component/index/index.css">
+        <link rel="stylesheet" href="component/player/player.css">
         <link rel="stylesheet" href="component/ranking/ranking.css">
         <link rel="stylesheet" href="component/signup/signup.css">
+        <link rel="stylesheet" href="component/succ/succ.css">
+        <link rel="stylesheet" href="component/vote/vote.css">
         <link rel="stylesheet" href="component/warpper/warpper.css">
         <!-- endinject -->
         <!-- endbuild -->
     </head>
     <body>
         <ui-view></ui-view>
-        <!-- build:js /js/app.js -->
-        <script type="text/javascript" src="./vender/angular/angular.js"></script>
-        <script type="text/javascript" src="./vender/angular-ui-router/angular-ui-router.js"></script>
+        <!-- build:js /assets/script/app.js -->
+        <script type="text/javascript" src="./vender/angular/angular-1.6.3.js"></script>
+        <script type="text/javascript" src="./vender/angular-ui-router/angular-ui-router-0.4.2.js"></script>
         <!-- inject:js -->
-        <script src="component/app/router.js"></script>
-        <script src="component/app/main.js"></script>
-        <script src="component/app/constant.js"></script>
+        <script src="component/app/app.js"></script>
+        <script src="component/vote/vote.js"></script>
+        <script src="component/succ/succ.js"></script>
+        <script src="component/signup/signup.js"></script>
+        <script src="component/ranking/ranking.js"></script>
+        <script src="component/player/player.js"></script>
+        <script src="component/index/index.js"></script>
+        <script src="component/header/header.js"></script>
+        <script src="component/app/router.config.js"></script>
         <script src="component/app/app-template.js"></script>
         <!-- endinject -->
         <!-- endbuild -->
         <script type="text/javascript">
             document.body.addEventListener('touchstart', function(){});
+            function loginBackToken(token){
+                console.log(token);
+                var voteId = localStorage.getItem("voteId");
+                var voteToken = token;
+                location.href = './index.html?id='+voteId+'&token='+voteToken;
+                // location.reload();
+                // var appEle = document.querySelector('[ng-app="app"]');
+                // var $scope = angular.element(appEle).scope();
+                // $scope.loginBackToken(voteId,voteToken);
+                // $scope.$apply();
+            }
         </script>
     </body>
 </html>

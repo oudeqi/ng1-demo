@@ -1,7 +1,8 @@
-<div id="ranking">
+<div id="ranking" ng-controller="ranking">
+    <!-- <app-header close="close()" title="详情"></app-header> -->
     <div class="padd-cont">
         <div class="look-detail-btn">
-            <a class="link">
+            <a class="link" ui-sref="vote({id:{{id}}})">
                 <i class="icon"></i>
                 <span>点击查看活动说明及奖励</span>
             </a>
@@ -9,77 +10,40 @@
         <div class="search-btn">
             <div class="ipt">
                 <i class="icon"></i>
-                <input type="text" placeholder="请输入选手的姓名或编号">
+                <input type="text" ng-model="keywords" placeholder="请输入选手的姓名或编号">
             </div>
             <div class="btn">
-                <button type="button">搜索</button>
+                <button type="button" ng-click="search()">搜索</button>
             </div>
         </div>
         <ul class="player-list">
-            <li>
+            <li ng-repeat="item in list">
                 <div class="inner">
-                    <div class="pic">
-                        <img src="./assets/image/head-pic.jpg" alt="">
-                    </div>
-                    <p class="p1">林先靖  编号:001</p>
+                    <a class="pic" ui-sref="player({id:{{item.id}}})">
+                        <img ng-src="{{item.photos[0]}}" alt="">
+                    </a>
+                    <p class="p1">{{item.name}}  编号:{{item.seriaNumber}}</p>
                     <p class="p2">
                         <span>票数</span>
-                        <strong>1321</strong>
+                        <strong>{{item.votes}}</strong>
                         <span>名次</span>
-                        <strong>1</strong>
+                        <strong>{{item.ranking}}</strong>
                     </p>
-                    <button class="give" type="button">投票成功</button>
-                </div>
-            </li>
-            <li>
-                <div class="inner">
-                    <div class="pic">
-                        <img src="./assets/image/head-pic.jpg" alt="">
-                    </div>
-                    <p class="p1">林先靖  编号:001</p>
-                    <p class="p2">
-                        <span>票数</span>
-                        <strong>1321</strong>
-                        <span>名次</span>
-                        <strong>2</strong>
-                    </p>
-                    <button class="notgive" type="button">投一票</button>
-                </div>
-            </li>
-            <li>
-                <div class="inner">
-                    <div class="pic">
-                        <img src="./assets/image/head-pic.jpg" alt="">
-                    </div>
-                    <p class="p1">林先靖  编号:001</p>
-                    <p class="p2">
-                        <span>票数</span>
-                        <strong>1321</strong>
-                        <span>名次</span>
-                        <strong>3</strong>
-                    </p>
-                    <button class="notgive" type="button">投一票</button>
-                </div>
-            </li>
-            <li>
-                <div class="inner">
-                    <div class="pic">
-                        <img src="./assets/image/head-pic.jpg" alt="">
-                    </div>
-                    <p class="p1">林先靖  编号:001</p>
-                    <p class="p2">
-                        <span>票数</span>
-                        <strong>1321</strong>
-                        <span>名次</span>
-                        <strong>4</strong>
-                    </p>
-                    <button class="notgive" type="button">投一票</button>
+                    <!-- //canVote 0 不能投 1可以投 2已投 -->
+                    <button ng-if="item.canVote==2" class="give" type="button">投票成功</button>
+                    <button ng-if="item.canVote==1" class="notgive" type="button" ng-click="vote(item)">投一票</button>
+                    <button ng-if="item.canVote==0" disabled="disabled" type="button">投一票</button>
                 </div>
             </li>
         </ul>
-        <p class="load-more">
+        <p class="load-more" ng-show="!loading && hasMore" ng-click="getList()">
+            加载更多...
+        </p>
+        <p class="load-more" ng-show="!loading && !hasMore">
+            已加载完所有
+        </p>
+        <p class="load-more" ng-show="loading">
             加载中...
-            <!-- 已加载完所有 -->
         </p>
     </div>
 </div>

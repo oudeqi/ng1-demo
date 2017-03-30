@@ -1,6 +1,8 @@
 @import "../../assets/scss/_mixin.scss";
 @import "../../assets/scss/_function.scss";
+@import "../../assets/scss/_sprite.scss";
 #index{
+    // padding-top: px2rem(48);
     .poster{
         width: 100%;
         background-color: #ddd;
@@ -27,17 +29,18 @@
                 right: 5px;
                 width: px2rem(70);
                 height: px2rem(70);
-                border-radius: 50%;
-                background: rgba(0,0,0,0.1);
+                overflow: hidden;
+                img{
+                    max-width: 100%;
+                    height: auto;
+                }
             }
             .p1{
                 padding: px2rem(10) 0;
                 .icon{
                     display: inline-block;
                     vertical-align: middle;
-                    width: px2rem(14);
-                    height: px2rem(14);
-                    background: #ddd;
+                    @include sprite($icon-timer);
                 }
                 .time{
                     display: inline-block;

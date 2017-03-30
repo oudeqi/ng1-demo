@@ -24,16 +24,33 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding-left: 0.9375rem;
   font-size: 0.9375rem;
   color: #2B333B;
 }
 
 #signup .time p .icon {
-  width: 0.875rem;
-  height: 0.875rem;
-  background: #ddd;
   margin-right: 6px;
+  background-image: url("../../assets/image/sprite.png");
+  background-position: -78px -102px;
+  width: 14px;
+  height: 14px;
+  background-size: 120px 120px;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
+#signup .time p span {
+  line-height: 1;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 #signup .time p:first-child {
@@ -41,7 +58,7 @@
 }
 
 #signup .time p:last-child {
-  padding-top: 0.375rem;
+  padding-top: 0.625rem;
   padding-bottom: 0.625rem;
 }
 
@@ -93,19 +110,66 @@
   overflow: hidden;
 }
 
-#signup .padd-cont .form-group .pic-view-list li .inner .content button {
+#signup .padd-cont .form-group .pic-view-list li .inner .content .delpic {
   position: absolute;
   top: 0;
   right: 0;
-  width: 24px;
-  height: 24px;
   border: 0;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+#signup .padd-cont .form-group .pic-view-list li .inner .content .delpic .icon {
+  display: block;
+  background-image: url("../../assets/image/sprite.png");
+  background-position: 0px -34px;
+  width: 24px;
+  height: 24px;
+  background-size: 120px 120px;
+}
+
+#signup .padd-cont .form-group .pic-view-list li .inner .content .addpic {
+  margin-top: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+#signup .padd-cont .form-group .pic-view-list li .inner .content .addpic p {
+  font-size: 0.875rem;
+  text-align: center;
+  color: #fff;
+  margin-top: 0.5rem;
+  line-height: 1;
+}
+
+#signup .padd-cont .form-group .pic-view-list li .inner .content .addpic button {
+  display: block;
+  margin: 0 auto;
+  height: 3.125rem;
+  width: 4.375rem;
+  background: url(../../assets/image/add-pic.png) no-repeat center;
+  background-size: cover;
+  border: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#signup .padd-cont .form-group .pic-view-list li .inner .content .addpic button input {
+  opacity: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 #signup .padd-cont .form-group .pic-view-list li .inner .content img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  z-index: 10;
 }
 
 #signup .padd-cont .form-group .pic-view-list li:first-child {
@@ -154,12 +218,12 @@
 }
 
 #signup .padd-cont .form-group .form-btn {
-  height: 3rem;
+  height: 2.75rem;
   width: 100%;
   color: #fff;
   background: #129AEE;
   border-radius: 0.25rem;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   border: 0;
 }
 

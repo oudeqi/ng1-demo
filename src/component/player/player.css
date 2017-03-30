@@ -1,0 +1,164 @@
+#player {
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+#player .poster {
+  width: 100%;
+  background-color: #ddd;
+  height: 11.25rem;
+  overflow: hidden;
+}
+
+#player .poster img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+#player .base-info {
+  padding: 0.8125rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #BFBFBF;
+}
+
+#player .base-info .row1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#player .base-info .row1 .name {
+  font-size: 30px;
+  color: #2B333B;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#player .base-info .row1 .btn-box {
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
+
+#player .base-info .row1 .btn-box button {
+  height: 2.375rem;
+  width: 6.875rem;
+  border: 0;
+  color: #fff;
+  border-radius: 0.125rem;
+}
+
+#player .base-info .row1 .btn-box button:disabled {
+  background-color: #2b333b;
+  cursor: not-allowed;
+}
+
+#player .base-info .row1 .btn-box button.notgive {
+  background-color: #129AEE;
+}
+
+#player .base-info .row1 .btn-box button.notgive:active {
+  opacity: 0.8;
+}
+
+#player .base-info .row1 .btn-box button.give {
+  background-color: #FB4747;
+  cursor: not-allowed;
+}
+
+#player .base-info .row2 {
+  margin-top: 0.625rem;
+  line-height: 1;
+  color: #2b333b;
+}
+
+#player .base-info .row2 strong {
+  font-weight: normal;
+  color: #FB4747;
+}
+
+#player .base-info .row3 {
+  margin-top: 0.625rem;
+  color: #2b333b;
+  line-height: 1;
+}
+
+#player .play-info .declaration {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #686868;
+  padding: 1.25rem 0.8125rem;
+}
+
+#player .play-info .pic {
+  margin-bottom: 0.625rem;
+}
+
+#player .play-info .pic img {
+  width: 100%;
+  display: block;
+}
+
+#player .btn-group {
+  padding: 1rem 0.8125rem;
+}
+
+#player .btn-group p {
+  padding-bottom: 0.8125rem;
+}
+
+#player .btn-group p button {
+  width: 100%;
+  height: 3rem;
+  color: #fff;
+  font-size: 1.125rem;
+  border-radius: 0.1875rem;
+  border: 0;
+}
+
+#player .btn-group p button:disabled {
+  background-color: #2b333b;
+  cursor: not-allowed;
+}
+
+#player .btn-group p button.notgive {
+  background-color: #129AEE;
+}
+
+#player .btn-group p button.notgive:active {
+  opacity: 0.8;
+}
+
+#player .btn-group p button.give {
+  background-color: #FB4747;
+  cursor: not-allowed;
+}
+
+#player .btn-group p a {
+  background: #FD9E24;
+  width: 100%;
+  display: block;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.125rem;
+  border-radius: 0.1875rem;
+  text-decoration: none;
+  border: 0;
+}
+
+#player .btn-group p a:active {
+  opacity: 0.8;
+}

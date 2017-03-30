@@ -1,17 +1,18 @@
 @import "../../assets/scss/_mixin.scss";
 @import "../../assets/scss/_function.scss";
+@import "../../assets/scss/_sprite.scss";
 #footer{
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: 1000;
     .inner{
         max-width: 640px;
         min-width: 320px;
         margin: 0 auto;
         height: px2rem(50);
-        background: #eee;
-        border-top: 1px solid #BFBFBF;
+        background: #fbfbfb;
         ul{
             display: flex;
             height: 100%;
@@ -26,11 +27,18 @@
                     justify-content: center;
                     align-items: center;
                     text-decoration: none;
+                    border-top: 1px solid #eee;
                     .icon{
-                        width: px2rem(24);
-                        height: px2rem(24);
                         display: block;
-                        background: #ddd;
+                        &.icon-home{
+                            @include sprite($icon-index);
+                        }
+                        &.icon-ranking{
+                            @include sprite($icon-ranking);
+                        }
+                        &.icon-signup{
+                            @include sprite($icon-signup);
+                        }
                     }
                     span{
                         color: #848689;
@@ -42,8 +50,17 @@
                 }
                 a.active{
                     background-color: #129AEE;
+                    border-top: 1px solid #129AEE;
                     .icon{
-                        background: #fff;;
+                        &.icon-home{
+                            @include sprite($icon-index-active);
+                        }
+                        &.icon-ranking{
+                            @include sprite($icon-ranking-active);
+                        }
+                        &.icon-signup{
+                            @include sprite($icon-signup-active);
+                        }
                     }
                     span{
                         color: #fff;

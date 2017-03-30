@@ -1,0 +1,41 @@
+<div id="player" ng-controller="player">
+    <!-- <app-header back="javascript:history.go(-1);" title="详情"></app-header> -->
+    <app-back></app-back>
+    <!-- <div class="poster">
+        <img ng-src="{{detail.photos[0]}}" alt="">
+    </div> -->
+    <div class="base-info">
+        <div class="row1">
+            <h3 class="name">{{detail.name}}</h3>
+            <div class="btn-box">
+                <!-- //canVote 0 不能投 1可以投 2已投 -->
+                <button ng-if="detail.canVote==2" class="give" type="button">投票成功</button>
+                <button ng-if="detail.canVote==1" class="notgive" type="button" ng-click="vote(detail)">投TA一票</button>
+                <button ng-if="detail.canVote==0" disabled="disabled" type="button">投TA一票</button>
+            </div>
+        </div>
+        <p class="row2">
+            编号 <strong>{{detail.seriaNumber}}</strong> 号 票数 <strong>{{detail.votes}}</strong> 排名 <strong>{{detail.ranking}}</strong>名
+        </p>
+        <div class="row3">
+            喜欢我就给我投票吧💘
+        </div>
+    </div>
+    <div class="play-info">
+        <p class="declaration">{{detail.declaration}}</p>
+        <p class="pic" ng-repeat="item in detail.photos">
+            <img ng-src="{{item}}" alt="">
+        </p>
+    </div>
+    <div class="btn-group">
+        <p>
+            <button ng-if="detail.canVote==2" class="give" type="button">投票成功</button>
+            <button ng-if="detail.canVote==1" class="notgive" type="button" ng-click="vote(detail)">投TA一票</button>
+            <button ng-if="detail.canVote==0" disabled="disabled" type="button">投TA一票</button>
+        </p>
+        <p>
+            <a type="button" ui-sref="home.signup">我也要参加</a>
+        </p>
+    </div>
+
+</div>

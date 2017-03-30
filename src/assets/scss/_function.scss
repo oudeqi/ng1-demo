@@ -2,3 +2,7 @@
 @function px2rem( $px ){
 	@return $px / 16 + rem;
 }
+
+@function adaptPx( $px ){
+	@return $px*16/375 + px;
+}

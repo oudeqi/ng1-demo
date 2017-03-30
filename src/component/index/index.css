@@ -28,8 +28,12 @@
   right: 5px;
   width: 4.375rem;
   height: 4.375rem;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+#index .padd-cont .tip .over img {
+  max-width: 100%;
+  height: auto;
 }
 
 #index .padd-cont .tip .p1 {
@@ -39,9 +43,11 @@
 #index .padd-cont .tip .p1 .icon {
   display: inline-block;
   vertical-align: middle;
-  width: 0.875rem;
-  height: 0.875rem;
-  background: #ddd;
+  background-image: url("../../assets/image/sprite.png");
+  background-position: -78px -102px;
+  width: 14px;
+  height: 14px;
+  background-size: 120px 120px;
 }
 
 #index .padd-cont .tip .p1 .time {

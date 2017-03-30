@@ -1,0 +1,79 @@
+#vote {
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+#vote .poster {
+  width: 100%;
+  background-color: #ddd;
+  height: 11.25rem;
+  overflow: hidden;
+}
+
+#vote .poster img {
+  max-width: 100%;
+  height: auto;
+}
+
+#vote .rule-list li {
+  border-bottom: 1px dashed #BFBFBF;
+  padding-bottom: 1.25rem;
+}
+
+#vote .rule-list li:last-child {
+  border-bottom: 0;
+}
+
+#vote .rule-list li .tit {
+  padding-top: 1.25rem;
+}
+
+#vote .rule-list li .tit .icon {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url("../../assets/image/sprite.png");
+  background-position: -28px -102px;
+  width: 16px;
+  height: 16px;
+  background-size: 120px 120px;
+}
+
+#vote .rule-list li .tit span {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1rem;
+  color: #2b333b;
+}
+
+#vote .rule-list li .rule-cont {
+  color: #686868;
+  padding-top: 20px;
+}
+
+#vote .rule-list li .rule-cont p {
+  padding-bottom: 0.625rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+#vote .signup-btn .notover, #vote .signup-btn .over {
+  height: 48px;
+  color: #fff;
+  display: block;
+  width: 100%;
+  border: 0;
+  font-size: 1.125rem;
+}
+
+#vote .signup-btn .notover {
+  background: #129AEE;
+}
+
+#vote .signup-btn .notover:active {
+  opacity: 0.8;
+}
+
+#vote .signup-btn .over {
+  background: #686868;
+}

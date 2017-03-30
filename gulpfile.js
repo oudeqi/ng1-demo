@@ -12,6 +12,17 @@ var browserSync = require("browser-sync").create();
 var watch = require("gulp-watch");
 var runSequence = require("run-sequence");
 
+var useref = require("gulp-useref");
+var gulpif = require("gulp-if");
+var uglify = require("gulp-uglify");
+var minifyCss = require("gulp-clean-css");
+var htmlmin = require("gulp-htmlmin");
+var rev = require("gulp-rev");
+var revReplace = require("gulp-rev-replace");
+var clean = require("gulp-clean");
+var imagemin = require("gulp-imagemin");
+
+
 var htmlMinOptions = {
    removeComments: true,//清除HTML注释
    collapseWhitespace: true,//压缩HTML
@@ -23,6 +34,54 @@ var htmlMinOptions = {
    minifyCSS: true//压缩页面CSS
 };
 
+/*打包流程*/
+gulp.task("clean", function() {
+    return gulp.src("./dist/*", {read: false})
+        .pipe(clean());
+});
+gulp.task("useref", function() {
+    return gulp.src("./src/index.html")
+        .pipe(useref())
+        .pipe(gulpif("*.js", uglify()))
+        .pipe(gulpif("*.css", minifyCss()))
+        .pipe(gulp.dest("./dist"));
+});
+gulp.task("htmlmin", function() {
+    return gulp.src("./dist/*.html")
+        .pipe(htmlmin(htmlMinOptions))
+        .pipe(gulp.dest("./dist"));
+});
+gulp.task("imagemin", function() {
+    return gulp.src("./src/assets/image/*.*")
+        // .pipe(imagemin())
+        .pipe(gulp.dest("./dist/assets/image"));
+});
+gulp.task("rev", function() {
+    return gulp.src(["./dist/assets/style/*.css", "./dist/assets/script/*.js", "./dist/assets/image/*.*"], {base: "./dist"})
+    .pipe(rev())
+    .pipe(gulp.dest("./dist"))
+    .pipe(rev.manifest({
+        merge: true
+    }))
+    .pipe(gulp.dest("./dist"));
+});
+gulp.task("replacerev", function(){
+  var manifest = gulp.src("./dist/rev-manifest.json");
+  return gulp.src(["./dist/*.html", "./dist/assets/style/*.css", "./dist/assets/script/*.js"], {base: './dist'})
+    .pipe(revReplace({manifest: manifest}))
+    .pipe(gulp.dest("./dist"));
+});
+
+gulp.task("server:build",function(cb){
+    browserSync.init({
+         server: "./dist"
+    });
+});
+
+gulp.task("build", ["clean"], function() {
+    runSequence("useref", "htmlmin", "imagemin", "rev", "replacerev", "server:build");
+});
+/////////////////////////////////////////////////////$RECYCLE.BIN\
 gulp.task("sprite", function() {
     var spriteData = gulp.src("./src/assets/sprite/*.png")
     .pipe(spritesmith({
@@ -126,15 +185,10 @@ function staticWatch(){
 }
 
 /*开发流程*/
-gulp.task('default', ['sprite'], function() {
+gulp.task("default", ["sprite"], function() {
     staticWatch();
     runSequence("scss:all", "tpl", "inject", "server:dev");
 });
-
-
-
-
-
 
 
 

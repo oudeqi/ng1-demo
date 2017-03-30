@@ -3,6 +3,7 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 #footer .inner {
@@ -10,8 +11,7 @@
   min-width: 320px;
   margin: 0 auto;
   height: 3.125rem;
-  background: #eee;
-  border-top: 1px solid #BFBFBF;
+  background: #fbfbfb;
 }
 
 #footer .inner ul {
@@ -48,13 +48,35 @@
       -ms-flex-align: center;
           align-items: center;
   text-decoration: none;
+  border-top: 1px solid #eee;
 }
 
 #footer .inner ul li a .icon {
-  width: 1.5rem;
-  height: 1.5rem;
   display: block;
-  background: #ddd;
+}
+
+#footer .inner ul li a .icon.icon-home {
+  background-image: url("../../assets/image/sprite.png");
+  background-position: -68px 0px;
+  width: 24px;
+  height: 24px;
+  background-size: 120px 120px;
+}
+
+#footer .inner ul li a .icon.icon-ranking {
+  background-image: url("../../assets/image/sprite.png");
+  background-position: 0px -68px;
+  width: 24px;
+  height: 24px;
+  background-size: 120px 120px;
+}
+
+#footer .inner ul li a .icon.icon-signup {
+  background-image: url("../../assets/image/sprite.png");
+  background-position: -34px 0px;
+  width: 24px;
+  height: 24px;
+  background-size: 120px 120px;
 }
 
 #footer .inner ul li a span {
@@ -67,10 +89,31 @@
 
 #footer .inner ul li a.active {
   background-color: #129AEE;
+  border-top: 1px solid #129AEE;
 }
 
-#footer .inner ul li a.active .icon {
-  background: #fff;
+#footer .inner ul li a.active .icon.icon-home {
+  background-image: url("../../assets/image/sprite.png");
+  background-position: -34px -34px;
+  width: 24px;
+  height: 24px;
+  background-size: 120px 120px;
+}
+
+#footer .inner ul li a.active .icon.icon-ranking {
+  background-image: url("../../assets/image/sprite.png");
+  background-position: 0px 0px;
+  width: 24px;
+  height: 24px;
+  background-size: 120px 120px;
+}
+
+#footer .inner ul li a.active .icon.icon-signup {
+  background-image: url("../../assets/image/sprite.png");
+  background-position: -68px -34px;
+  width: 24px;
+  height: 24px;
+  background-size: 120px 120px;
 }
 
 #footer .inner ul li a.active span {
