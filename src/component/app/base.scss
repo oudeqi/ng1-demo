@@ -33,6 +33,8 @@ body {
 	color: #000;
 	background: #fff;
 	text-align: justify;
+	-webkit-font-smoothing: antialiased; 
+	-moz-osx-font-smoothing: grayscale;
 }
 *{
 	margin: 0;
