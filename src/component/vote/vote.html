@@ -4,7 +4,7 @@
     <div class="poster">
         <img ng-src="{{detail.coverPhoto}}" alt="">
     </div>
-    <ul class="rule-list">
+    <ul class="rule-list" ng-show="detail">
         <li class="padd-cont">
             <h2 class="tit">
                 <i class="icon"></i>
@@ -20,9 +20,9 @@
                 <span>活动组织</span>
             </h2>
             <div class="rule-cont">
-                <p>主办单位：{{detail.orgMain}}</p>
-                <p>协办单位：{{detail.orgSecondary}}</p>
-                <p>承办单位：{{detail.undertaker}}</p>
+                <p ng-if="detail.orgMain">主办单位：{{detail.orgMain}}</p>
+                <p ng-if="detail.orgSecondary">协办单位：{{detail.orgSecondary}}</p>
+                <p ng-if="detail.undertaker">承办单位：{{detail.undertaker}}</p>
             </div>
         </li>
         <li class="padd-cont">
@@ -73,9 +73,9 @@
             </div>
         </li>
     </ul>
-    <div class="signup-btn">
+    <div class="signup-btn" ng-show="detail">
         <!-- 1未开始 2报名中 3报名已结束 -->
-        <button ng-if="detail.status==2" class="notover" ui-sref="home.signup" type="button">我要报名</button>
+        <button ng-if="detail.status==2" class="notover" ui-sref="signup" type="button">我要报名</button>
         <button ng-if="detail.status==3" class="over" type="button">报名已结束</button>
         <button ng-if="detail.status==1" class="over" type="button">报名未开始</button>
     </div>

@@ -5,10 +5,16 @@
     angular.module("app",[
         "app.router",
         "app.constant",
-        "app.directive"
+        "app.directive",
+        "app.toast"
     ]);
+
     angular.module("app").run(["$rootScope", "$location",
         function($rootScope, $location) {
+
+            window.addEventListener("scroll",function(e){
+                $rootScope.$broadcast("scroll",e);
+            },false);
 
             var url = $location.$$absUrl,
                 start = url.indexOf("?")+1,
@@ -48,14 +54,32 @@
             };
 
             $rootScope.login = function(){
-                console.log("login");
+                console.log("未登录");
                 if(typeof h5 == "object"){
                     h5.openLogin();
+                }else{
+                    alert("未登录");
                 }
             };
-            
+
         }
-    ]);
+    ]).factory("device",["$window",function($window){
+        var userAgent = $window.navigator.userAgent.toLowerCase();
+        function find(needle){
+            return userAgent.indexOf(needle) !== -1;
+        }
+        return {
+            screenW : function(){
+                return parseInt($window.innerWidth);
+            },
+            iphone : function(){
+                return find('iphone');
+            },
+            android : function(){
+                return find('android');
+            }
+        };
+    }]);
     angular.module("app.router",["ui.router","appTemplate"]);
     angular.module("app.directive",["appTemplate"]);
     angular.module("app.directive").directive('cleanFileValue',function(){
@@ -72,8 +96,8 @@
             }
         };
     });
-    // angular.module("app.constant",[]).constant("HOST","http://192.168.10.30:8080");
-    angular.module("app.constant",[]).constant("HOST","http://101.200.129.132");
+    angular.module("app.constant",[]).constant("HOST","https://api.2tai.com");
+    // angular.module("app.constant",[]).constant("HOST","http://192.168.10.40:8080");
 
 
 })();

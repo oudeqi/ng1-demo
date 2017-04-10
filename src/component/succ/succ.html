@@ -4,7 +4,7 @@
         <img ng-src="{{detail.coverPhoto}}" alt="">
     </div>
     <h2 class="tit">请等待审核</h2>
-    <p class="desc">您已参加“{{detail.title}}”活动。</p>
+    <p class="desc" ng-show="detail">您已参加“{{detail.title}}”活动。</p>
     <p class="btn">
         <a type="button" ui-sref="home.index">回到活动</a>
     </p>

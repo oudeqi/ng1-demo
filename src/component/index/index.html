@@ -16,6 +16,10 @@
                 <span class="time">投票于 {{detail.voteEnd | date:"yyyy/MM/dd HH:mm"}} 结束</span>
                 <span class="status">（投票中）</span>
             </p>
+            <p class="p1" ng-if="detail.voteStatus==3">
+                <i class="icon"></i>
+                <span class="time">投票于 {{detail.voteEnd | date:"yyyy/MM/dd HH:mm"}} 结束</span>
+            </p>
             <div class="over" ng-if="detail.voteStatus==3">
                 <img src="./assets/image/vote-over.png" alt="">
             </div>
@@ -41,6 +45,17 @@
                 </tr>
             </table>
         </div>
+        <div class="reward">
+            <div class="reward-pic">
+                <img src="./assets/image/vote-reward.png" alt="">
+            </div>
+            <ul class="reward-list">
+                <li ng-repeat="item in detail.reward">
+                    <h3>{{item.grade}} {{item.number}}人</h3>
+                    <p>奖品：{{item.goods}}</p>
+                </li>
+            </ul>
+        </div>
         <div class="look-detail-btn">
             <a class="link" ui-sref="vote({id:{{id}}})">
                 <i class="icon"></i>
@@ -59,8 +74,8 @@
         <ul class="player-list">
             <li ng-repeat="item in list">
                 <div class="inner">
-                    <a class="pic" ui-sref="player({id:{{item.id}}})">
-                        <img ng-src="{{item.photos[0]}}" alt="">
+                    <a class="pic" ng-click="lookPlayer(item.id)">
+                        <img ng-src="{{item.photos[0]}}?x-oss-process=image/resize,m_fill,h_{{h}},w_{{w}}" alt="">
                     </a>
                     <p class="p1">{{item.name}}  编号:{{item.seriaNumber}}</p>
                     <p class="p2">
@@ -70,19 +85,23 @@
                         <strong>{{item.ranking}}</strong>
                     </p>
                     <!-- //canVote 0 不能投 1可以投 2已投 -->
-                    <button ng-if="item.canVote==2" class="give" type="button">投票成功</button>
-                    <button ng-if="item.canVote==1" class="notgive" type="button" ng-click="vote(item)">投一票</button>
-                    <button ng-if="item.canVote==0" disabled="disabled" type="button">投一票</button>
+                    <!-- 0 明天再来；1 可以投票；2 已经投票 2.1判断倒计时字符串 2.2 红色明日再来 -->
+                    <button ng-if="detail.voteStatus == 2 && item.canVote==2 && !!item.countdown" class="countdown" type="button">{{item.countdown}}</button>
+                    <button ng-if="detail.voteStatus == 2 && item.canVote==2 && !item.countdown" class="tomorrow" type="button">明日再来</button>
+                    <button ng-if="detail.voteStatus == 2 && item.canVote==1" class="canvote" type="button" ng-click="vote(item)">投一票</button>
+                    <button ng-if="detail.voteStatus == 2 && item.canVote==0" class="disabled" type="button" ng-click="voteDisabled()">明天再来</button>
+                    <button ng-if="detail.voteStatus == 1" class="disabled" type="button">投票未开始</button>
+                    <button ng-if="detail.voteStatus == 3" class="disabled" type="button">投票已结束</button>
                 </div>
             </li>
         </ul>
-        <p class="load-more" ng-show="!loading && hasMore" ng-click="getList()">
-            加载更多...
+        <p class="load-more" ng-show="loading==2" ng-click="getList()">
+            加载更多
         </p>
-        <p class="load-more" ng-show="!loading && !hasMore">
+        <p class="load-all" ng-show="loading==3">
             已加载完所有
         </p>
-        <p class="load-more" ng-show="loading">
+        <p class="list-loading" ng-show="loading==1 || loading==4">
             加载中...
         </p>
     </div>

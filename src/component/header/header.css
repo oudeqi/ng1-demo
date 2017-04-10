@@ -52,19 +52,19 @@
 .header .inner .btn-cont a .icon-back {
   display: block;
   background-image: url("../../assets/image/sprite.png");
-  background-position: -102px 0px;
+  background-position: 0px -102px;
   width: 18px;
   height: 18px;
-  background-size: 120px 120px;
+  background-size: 122px 120px;
 }
 
 .header .inner .btn-cont a .icon-close {
   display: block;
   background-image: url("../../assets/image/sprite.png");
-  background-position: -102px -56px;
+  background-position: -102px -30px;
   width: 18px;
   height: 18px;
-  background-size: 120px 120px;
+  background-size: 122px 120px;
 }
 
 .header .inner .btn-cont a:active .icon {
@@ -87,10 +87,10 @@
   height: 2.6rem;
   border-radius: 50%;
   padding-right: 0.25rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
-  top: 1.25rem;
-  left: 1.25rem;
+  top: 0.625rem;
+  left: 0.625rem;
   z-index: 1000;
   display: -webkit-box;
   display: -webkit-flex;
@@ -109,10 +109,10 @@
 .app-back .icon {
   display: block;
   background-image: url("../../assets/image/sprite.png");
-  background-position: 0px -102px;
+  background-position: -28px -102px;
   width: 18px;
   height: 18px;
-  background-size: 120px 120px;
+  background-size: 122px 120px;
 }
 
 .app-back:active {

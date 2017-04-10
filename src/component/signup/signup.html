@@ -1,9 +1,10 @@
 <div id="signup" ng-controller="signup">
     <!-- <app-header close="close()" title="详情"></app-header> -->
+    <app-back></app-back>
     <div class="poster">
         <img ng-src="{{detail.coverPhoto}}" alt="">
     </div>
-    <div class="time">
+    <div class="time" ng-show="detail">
         <p>
             <i class="icon"></i>
             <span>报名时间 {{detail.signupStart | date:"yyyy/MM/dd"}} - {{detail.signupEnd | date:"yyyy/MM/dd"}}</span>
@@ -14,7 +15,7 @@
             <span>投票时间 {{detail.voteStart | date:"yyyy/MM/dd"}} - {{detail.voteEnd | date:"yyyy/MM/dd"}}</span>
         </p>
     </div>
-    <div class="padd-cont">
+    <div class="padd-cont" ng-show="detail">
         <div class="form-group">
             <p class="form-label">*请上传参赛作品</p>
             <ul class="pic-view-list">
@@ -22,9 +23,7 @@
                     <div class="inner">
                         <div class="content">
                             <button ng-show="pic0" ng-click="delPic(0)" class="delpic" type="button"><i class="icon"></i></button>
-                            <div class="pic-view">
-                                <!-- <img src="../../assets/image/poster.jpg" alt=""> -->
-                            </div>
+                            <div ng-show="pic0" class="pic-view"></div>
                             <div class="addpic" ng-hide="pic0">
                                 <button type="button" name="button">
                                     <input clean-file-value type="file" name="file" clean-file-value accept="image/*" onchange="angular.element(this).scope().fileChange(this,0)" />
@@ -38,9 +37,7 @@
                     <div class="inner">
                         <div class="content">
                             <button ng-show="pic1" ng-click="delPic(1)" class="delpic" type="button"><i class="icon"></i></button>
-                            <div class="pic-view">
-                                <!-- <img src="../../assets/image/poster.jpg" alt=""> -->
-                            </div>
+                            <div ng-show="pic1" class="pic-view"></div>
                             <div class="addpic" ng-hide="pic1">
                                 <button type="button" name="button">
                                     <input clean-file-value type="file" name="file" clean-file-value accept="image/*" onchange="angular.element(this).scope().fileChange(this,1)" />
@@ -54,9 +51,7 @@
                     <div class="inner">
                         <div class="content">
                             <button ng-show="pic2" ng-click="delPic(2)" class="delpic" type="button"><i class="icon"></i></button>
-                            <div class="pic-view">
-                                <!-- <img src="../../assets/image/poster.jpg" alt=""> -->
-                            </div>
+                            <div ng-show="pic2" class="pic-view"></div>
                             <div class="addpic" ng-hide="pic2">
                                 <button type="button" name="button">
                                     <input clean-file-value type="file" name="file" clean-file-value accept="image/*" onchange="angular.element(this).scope().fileChange(this,2)" />
@@ -67,18 +62,18 @@
                     </div>
                 </li>
             </ul>
-            <p class="form-tip">最多可上传3张，默认第一张为封面图片</p>
+            <p class="form-tip">请上传三张，默认第一张为封面图片</p>
         </div>
         <div class="form-group">
             <p class="form-label">*姓名：</p>
             <div class="form-ipt">
-                <input type="text" ng-model="postData.name" placeholder="请输入参赛人姓名">
+                <input type="text" ng-class="{'has-error':nameInvalid}" ng-model="postData.name" ng-change="checkName()" placeholder="请输入参赛人姓名">
             </div>
         </div>
         <div class="form-group">
             <p class="form-label">*联系电话：</p>
             <div class="form-ipt">
-                <input type="text" ng-model="postData.phoneNo" placeholder="请输入联系电话">
+                <input type="tel" ng-class="{'has-error':phoneNoInvalid}" ng-model="postData.phoneNo" ng-change="checkPhoneNo()" placeholder="请输入联系电话">
             </div>
         </div>
         <div class="form-group">
@@ -87,8 +82,20 @@
                 <textarea name="name" rows="4" ng-model="postData.declaration" placeholder="请输入想说的话"></textarea>
             </div>
         </div>
-        <div class="form-group">
-            <button ng-click="signUp()" class="form-btn" type="button">点击报名</button>
+        <div class="form-group" ng-show="detail.status==1">
+            <a href="javascript:void(0);" class="form-btn disabled" type="button"><span>报名未开始</span></a>
+        </div>
+        <div class="form-group" ng-show="detail.status==2">
+            <a href="javascript:void(0);" ng-click="signUp()" class="form-btn" ng-class="{'loading':loading==1}" type="button">
+                <i class="icon icon-loading"></i>
+                <span>点击报名</span>
+            </a>
+        </div>
+        <div class="form-group" ng-show="detail.status==3">
+            <a href="javascript:void(0);" class="form-btn disabled" type="button"><span>报名已经结束</span></a>
+        </div>
+        <div class="form-group" ng-show="detail.status==4">
+            <a href="javascript:void(0);" class="form-btn succeed" type="button"><span>已经报名该活动</span></a>
         </div>
     </div>
 </div>

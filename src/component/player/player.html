@@ -1,17 +1,15 @@
 <div id="player" ng-controller="player">
     <!-- <app-header back="javascript:history.go(-1);" title="详情"></app-header> -->
     <app-back></app-back>
-    <!-- <div class="poster">
-        <img ng-src="{{detail.photos[0]}}" alt="">
-    </div> -->
-    <div class="base-info">
+    <div class="base-info" ng-show="detail">
         <div class="row1">
             <h3 class="name">{{detail.name}}</h3>
             <div class="btn-box">
-                <!-- //canVote 0 不能投 1可以投 2已投 -->
-                <button ng-if="detail.canVote==2" class="give" type="button">投票成功</button>
-                <button ng-if="detail.canVote==1" class="notgive" type="button" ng-click="vote(detail)">投TA一票</button>
-                <button ng-if="detail.canVote==0" disabled="disabled" type="button">投TA一票</button>
+                <!-- 0 明天再来；1 可以投票；2 已经投票 2.1判断倒计时字符串 2.2 红色明日再来 -->
+                <button ng-if="detail.canVote==2 && !!detail.countdown" class="countdown" type="button">{{detail.countdown}}</button>
+                <button ng-if="detail.canVote==2 && !detail.countdown" class="tomorrow" type="button">明日再来</button>
+                <button ng-if="detail.canVote==1" class="canvote" type="button" ng-click="vote(detail)">投一票</button>
+                <button ng-if="detail.canVote==0" class="disabled" type="button">明天再来</button>
             </div>
         </div>
         <p class="row2">
@@ -24,17 +22,22 @@
     <div class="play-info">
         <p class="declaration">{{detail.declaration}}</p>
         <p class="pic" ng-repeat="item in detail.photos">
-            <img ng-src="{{item}}" alt="">
+            <img ng-src="{{item}}?x-oss-process=image/resize,m_mfit,h_{{w}},w_{{w}}" alt="">
         </p>
     </div>
-    <div class="btn-group">
+    <div class="btn-group" ng-show="detail">
         <p>
-            <button ng-if="detail.canVote==2" class="give" type="button">投票成功</button>
-            <button ng-if="detail.canVote==1" class="notgive" type="button" ng-click="vote(detail)">投TA一票</button>
-            <button ng-if="detail.canVote==0" disabled="disabled" type="button">投TA一票</button>
+            <!-- 0 明天再来；1 可以投票；2 已经投票 2.1判断倒计时字符串 2.2 红色明日再来 -->
+            <button ng-if="detail.canVote==2 && !!detail.countdown" class="countdown" type="button">{{detail.countdown}}</button>
+            <button ng-if="detail.canVote==2 && !detail.countdown" class="tomorrow" type="button">明日再来</button>
+            <button ng-if="detail.canVote==1" class="canvote" type="button" ng-click="vote(detail)">投一票</button>
+            <button ng-if="detail.canVote==0" class="disabled" type="button">明天再来</button>
         </p>
         <p>
-            <a type="button" ui-sref="home.signup">我也要参加</a>
+            <a type="button" ui-sref="signup">我也要参加</a>
+        </p>
+        <p ng-show="voteDetail">
+            <a type="button" ng-click="share()" class="share">喊人来投票</a>
         </p>
     </div>
 

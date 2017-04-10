@@ -16,13 +16,11 @@
                     id: localStorage.getItem("voteId")
                 },
                 headers: {
-                    'Authorization': localStorage.getItem("voteToken")
+                    "Authorization": localStorage.getItem("voteToken")
                 }
             }).then(function(res){
-
                 console.log("获取活动详情：",res);
                 $scope.detail = res.data.data;
-
             }).catch(function(error){
                 console.log(error);
             });
@@ -55,6 +53,8 @@
                 },0);
             };
 
+
+
             //报名
             $scope.postData = {
                 voteSetId:localStorage.getItem("voteId"),
@@ -63,10 +63,38 @@
                 declaration:"",
                 base64Photos:[]
             };
-            $scope.signUp = function(){
 
-                if(!$scope.postData.name || !$scope.postData.phoneNo || !$scope.postData.declaration){
+            $scope.nameInvalid = false;
+            $scope.phoneNoInvalid = false;
+
+            $scope.checkName = function(){
+                if(!!$scope.postData.name){
+                    $scope.nameInvalid = false;
+                }else{
+                    $scope.nameInvalid = true;
+                }
+            };
+            $scope.checkPhoneNo = function(){
+                if(/^(0|[1-9][0-9]{10})$/.test($scope.postData.phoneNo)){
+                    $scope.phoneNoInvalid = false;
+                }else{
+                    $scope.phoneNoInvalid = true;
+                }
+            };
+
+            $scope.loading = 0;
+            $scope.signUp = function(){
+                if(!$scope.postData.name){
+                    $scope.nameInvalid = true;
                     return false;
+                }else{
+                    $scope.nameInvalid = false;
+                }
+                if(!/^(0|[1-9][0-9]{10})$/.test($scope.postData.phoneNo)){
+                    $scope.phoneNoInvalid = true;
+                    return false;
+                }else{
+                    $scope.phoneNoInvalid = false;
                 }
                 var img1 = document.querySelector("#signup").querySelectorAll("img")[1];
                 var img2 = document.querySelector("#signup").querySelectorAll("img")[2];
@@ -79,6 +107,10 @@
                     return false;
                 }
                 console.log($scope.postData);
+                if($scope.loading == 1){
+                    return false;
+                }
+                $scope.loading = 1;
                 $http.post(HOST+'/v1/aut/vote/player',{
                     voteSetId:$scope.postData.voteSetId,
                     name:$scope.postData.name,
@@ -90,6 +122,7 @@
                         'Authorization':localStorage.getItem("voteToken")
                     }
                 }).then(function(res){
+                    $scope.loading = 0;
                     console.log("报名：",res);
                     if(res.data.data){
                         $state.go("succ",{id:$scope.id},{reload:true});
@@ -97,13 +130,11 @@
                         alert(res.data.errMessage);
                     }
                 }).catch(function(error){
+                    $scope.loading = 0;
+                    alert("请求失败");
                     console.log(error);
                 });
             };
-
-
-
-
         }
     ]);
 
