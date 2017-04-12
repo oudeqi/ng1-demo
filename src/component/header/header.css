@@ -49,6 +49,10 @@
   padding: 0.625rem 0.75rem;
 }
 
+.header .inner .btn-cont a .icon {
+  opacity: 0.6;
+}
+
 .header .inner .btn-cont a .icon-back {
   display: block;
   background-image: url("../../assets/image/sprite.png");
@@ -68,7 +72,7 @@
 }
 
 .header .inner .btn-cont a:active .icon {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .header .inner .head-tit {

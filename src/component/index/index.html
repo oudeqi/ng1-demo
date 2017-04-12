@@ -1,5 +1,5 @@
 <div id="index" ng-controller="index">
-    <!-- <app-header close="close()" title="详情"></app-header> -->
+    <!-- <app-header close="close()">详情</app-header> -->
     <div class="poster">
         <img ng-src="{{detail.coverPhoto}}" alt="">
     </div>
@@ -100,6 +100,9 @@
         </p>
         <p class="load-all" ng-show="loading==3">
             已加载完所有
+        </p>
+        <p class="load-all" ng-show="loading==5">
+            暂无数据
         </p>
         <p class="list-loading" ng-show="loading==1 || loading==4">
             加载中...

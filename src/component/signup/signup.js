@@ -1,13 +1,8 @@
 ;(function(){
-
-    'use strict';
-
+    "use strict";
     var app = angular.module("app");
     app.controller("signup",["$scope","$rootScope","$http","HOST","$timeout","$state",
         function($scope,$rootScope,$http,HOST,$timeout,$state){
-            console.log(HOST);
-            console.log(localStorage.getItem("voteId"));
-            console.log(localStorage.getItem("voteToken"));
 
             $scope.id = localStorage.getItem("voteId");
 
@@ -52,8 +47,6 @@
                     $scope["pic"+i] = false;
                 },0);
             };
-
-
 
             //报名
             $scope.postData = {

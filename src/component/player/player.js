@@ -24,7 +24,7 @@
                     id: $scope.id
                 },
                 headers: {
-                    'Authorization': localStorage.getItem("voteToken")
+                    "Authorization": localStorage.getItem("voteToken")
                 }
             }).then(function(res){
                 console.log("获取选手详情：",res);
@@ -39,7 +39,7 @@
                     id: localStorage.getItem("voteId")
                 },
                 headers: {
-                    'Authorization': localStorage.getItem("voteToken")
+                    "Authorization": localStorage.getItem("voteToken")
                 }
             }).then(function(res){
                 console.log("获取活动详情：",res);

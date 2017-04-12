@@ -59,23 +59,41 @@
   font-size: 1rem;
 }
 
-#vote .signup-btn .notover, #vote .signup-btn .over {
-  height: 48px;
-  color: #fff;
-  display: block;
+#vote .signup-btn {
+  padding: 0 0.625rem;
+  padding-bottom: 0.625rem;
+}
+
+#vote .signup-btn .btn {
+  height: 2.75rem;
   width: 100%;
-  border: 0;
-  font-size: 1.125rem;
-}
-
-#vote .signup-btn .notover {
+  color: #fff;
   background: #129AEE;
+  border-radius: 0.125rem;
+  font-size: 1.125rem;
+  border: 0;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
-#vote .signup-btn .notover:active {
+#vote .signup-btn .btn.btn-disabled {
+  background-color: #d7d7d7;
+  cursor: not-allowed;
+}
+
+#vote .signup-btn .btn.btn-primary {
+  background-color: #129AEE;
+}
+
+#vote .signup-btn .btn.btn-primary:active {
   opacity: 0.8;
 }
 
-#vote .signup-btn .over {
-  background: #686868;
+#vote .signup-btn .btn.btn-info {
+  background-color: #FD9E24;
+}
+
+#vote .signup-btn .btn.btn-info:active {
+  opacity: 0.8;
 }

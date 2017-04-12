@@ -41,7 +41,7 @@
             $scope.pageSize = 20;
             $scope.pageIndex = 1;
             $scope.list = [];
-            $scope.loading = 0;//1，加载中 2，加载更多 3，加载完所有 4，历史加载中
+            $scope.loading = 0;//1，加载中 2，加载更多 3，加载完所有 4，历史加载中 5,暂无数据
             $scope.getList = function(){
                 $scope.loading = 1;
                 $http.get(HOST+"/v1/player/list",{
@@ -62,11 +62,15 @@
                         angular.forEach(res.data.data.data,function(item){
                             $scope.list.push(item);
                         });
-                        if(res.data.data.pageCount == res.data.data.pageIndex){
-                            $scope.loading = 3;
+                        if(res.data.data.rowCount === 0){
+                            $scope.loading = 5;
                         }else{
-                            $scope.pageIndex = res.data.data.pageIndex + 1;
-                            $scope.loading = 2;
+                            if(res.data.data.pageCount == res.data.data.pageIndex){
+                                $scope.loading = 3;
+                            }else{
+                                $scope.pageIndex = res.data.data.pageIndex + 1;
+                                $scope.loading = 2;
+                            }
                         }
                     }else{
                         $scope.loading = 0;
@@ -81,7 +85,6 @@
             var currentPage = localStorage.getItem("currentPage");
             var currentScrollTop = localStorage.getItem("currentScrollTop");
             var currentKeywords = localStorage.getItem("currentKeywords");
-            console.log(currentPage,currentScrollTop,currentKeywords);
             if(currentPage && currentScrollTop){
                 $scope.loading = 4;
                 $http.get(HOST+"/v1/player/list",{

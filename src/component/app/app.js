@@ -49,7 +49,8 @@
             $rootScope.close = function(){
                 console.log("close");
                 if(typeof h5 == "object"){
-                    h5.closeWebView();
+                    // h5.closeWebView();
+                    h5.backEvent();
                 }
             };
 

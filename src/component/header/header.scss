@@ -27,6 +27,9 @@
                 text-decoration: none;
                 color: #666;
                 padding: px2rem(10) px2rem(12);
+                .icon{
+                    opacity: 0.6;
+                }
                 .icon-back{
                     display: block;
                     @include sprite($icon-back);
@@ -37,7 +40,7 @@
                 }
                 &:active{
                     .icon{
-                        opacity: 0.5;
+                        opacity: 1;
                     }
                 }
             }

@@ -71,7 +71,7 @@
 }
 
 #signup .padd-cont {
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.5625rem;
 }
 
 #signup .padd-cont .form-group {
@@ -261,7 +261,7 @@
   width: 100%;
   color: #fff;
   background: #129AEE;
-  border-radius: 0.25rem;
+  border-radius: 0.125rem;
   font-size: 1.125rem;
   border: 0;
   text-decoration: none;

@@ -1,5 +1,5 @@
 <div id="vote" ng-controller="vote">
-    <!-- <app-header back="javascript:history.go(-1);" title="详情"></app-header> -->
+    <!-- <app-header back>详情</app-header> -->
     <app-back></app-back>
     <div class="poster">
         <img ng-src="{{detail.coverPhoto}}" alt="">
@@ -38,10 +38,10 @@
         <li class="padd-cont">
             <h2 class="tit">
                 <i class="icon"></i>
-                <span>参选指南</span>
+                <span>参赛须知</span>
             </h2>
             <div class="rule-cont">
-                <p ng-repeat="item in detail.signUpRule">{{item}}</p>
+                <p ng-repeat="item in detail.signUpRule">{{$index+1}}、{{item}}</p>
             </div>
         </li>
         <li class="padd-cont">
@@ -74,9 +74,17 @@
         </li>
     </ul>
     <div class="signup-btn" ng-show="detail">
+
         <!-- 1未开始 2报名中 3报名已结束 -->
+        <!-- <button ng-if="detail.status==1" class="over" type="button">报名未开始</button>
         <button ng-if="detail.status==2" class="notover" ui-sref="signup" type="button">我要报名</button>
-        <button ng-if="detail.status==3" class="over" type="button">报名已结束</button>
-        <button ng-if="detail.status==1" class="over" type="button">报名未开始</button>
+        <button ng-if="detail.status==3" class="over" type="button">报名已结束</button> -->
+
+        <button ng-if="detail.status==1" class="btn btn-disabled" type="button">报名未开始</button>
+        <button ng-if="detail.status==2" class="btn btn-primary" ui-sref="signup" type="button">我要报名</button>
+        <button ng-if="detail.status==3" class="btn btn-disabled" type="button">报名已结束</button>
+        <button class="btn btn-info" type="button" ng-click="share()">分享给好友</button>
+
+
     </div>
 </div>
