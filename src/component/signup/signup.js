@@ -104,7 +104,7 @@
                     return false;
                 }
                 $scope.loading = 1;
-                $http.post(HOST+'/v1/aut/vote/player',{
+                $http.post(HOST+'/v1/vote/player',{
                     voteSetId:$scope.postData.voteSetId,
                     name:$scope.postData.name,
                     phoneNo:$scope.postData.phoneNo,

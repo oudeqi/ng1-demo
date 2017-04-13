@@ -1,6 +1,6 @@
 ;(function(){
 
-    'use strict';
+    "use strict";
 
     angular.module("app",[
         "app.router",
@@ -49,8 +49,9 @@
             $rootScope.close = function(){
                 console.log("close");
                 if(typeof h5 == "object"){
-                    // h5.closeWebView();
                     h5.backEvent();
+                }else{
+                    alert("缺少h5对象");
                 }
             };
 
@@ -59,7 +60,7 @@
                 if(typeof h5 == "object"){
                     h5.openLogin();
                 }else{
-                    alert("未登录");
+                    alert("缺少h5对象");
                 }
             };
 
