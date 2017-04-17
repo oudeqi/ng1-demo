@@ -6,10 +6,6 @@
     app.controller("succ",["$scope","$rootScope","$http","HOST","$state",
         function($scope,$rootScope,$http,HOST,$state){
 
-            console.log(HOST);
-            console.log(localStorage.getItem("voteId"));
-            console.log(localStorage.getItem("voteToken"));
-
             $scope.id = $state.params.id;
             console.log($scope.id);
 

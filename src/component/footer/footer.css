@@ -60,23 +60,23 @@
   background-position: 0px -34px;
   width: 24px;
   height: 24px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 #footer .inner ul li a .icon.icon-ranking {
   background-image: url("../../assets/image/sprite.png");
-  background-position: -68px 0px;
+  background-position: 0px -68px;
   width: 24px;
   height: 24px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 #footer .inner ul li a .icon.icon-signup {
   background-image: url("../../assets/image/sprite.png");
-  background-position: 0px -68px;
+  background-position: 0px 0px;
   width: 24px;
   height: 24px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 #footer .inner ul li a span {
@@ -97,23 +97,23 @@
   background-position: -34px 0px;
   width: 24px;
   height: 24px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 #footer .inner ul li a.active .icon.icon-ranking {
   background-image: url("../../assets/image/sprite.png");
-  background-position: -34px -34px;
+  background-position: -68px -34px;
   width: 24px;
   height: 24px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 #footer .inner ul li a.active .icon.icon-signup {
   background-image: url("../../assets/image/sprite.png");
-  background-position: -68px -34px;
+  background-position: -34px -34px;
   width: 24px;
   height: 24px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 #footer .inner ul li a.active span {

@@ -1,10 +1,20 @@
-<div id="succ" ng-controller="succ">
-    <!-- <app-header title="详情"></app-header> -->
+<div id="succ" ng-controller="succ" ng-class="{'hasHeader':hasHeader}">
+    <app-header ng-show="hasHeader">提交成功</app-header>
     <div class="poster">
         <img ng-src="{{detail.coverPhoto}}" alt="">
     </div>
     <h2 class="tit">请等待审核</h2>
-    <p class="desc" ng-show="detail">您已参加“{{detail.title}}”活动。</p>
+    <p class="desc" ng-show="detail">您已申请参加“{{detail.title}}”活动，如有疑问请联系客服。</p>
+    <div class="contact">
+        <p>
+            <span>客服微信：</span>
+            <span>{{detail.serviceWeixin}}</span>
+        </p>
+        <p>
+            <span>客服电话：</span>
+            <span>{{detail.servicePhone}}</span>
+        </p>
+    </div>
     <p class="btn">
         <a type="button" ui-sref="home.index">回到活动</a>
     </p>

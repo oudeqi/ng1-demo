@@ -2,10 +2,12 @@
 @import "../../assets/scss/_function.scss";
 @import "../../assets/scss/_sprite.scss";
 #signup{
-    // padding-top: px2rem(48);
     max-width: 640px;
     min-width: 320px;
     margin: 0 auto;
+    &.hasHeader{
+        padding-top: px2rem(48);
+    }
     .poster{
         width: 100%;
         background-color: #ddd;

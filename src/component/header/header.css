@@ -33,6 +33,17 @@
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .inner .btn-cont.cont-r {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .header .inner .btn-cont a {
@@ -51,24 +62,35 @@
 
 .header .inner .btn-cont a .icon {
   opacity: 0.6;
+  -webkit-transition: all 150ms ease-out;
+  transition: all 150ms ease-out;
 }
 
 .header .inner .btn-cont a .icon-back {
   display: block;
   background-image: url("../../assets/image/sprite.png");
-  background-position: 0px -102px;
+  background-position: -28px -102px;
   width: 18px;
   height: 18px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 .header .inner .btn-cont a .icon-close {
   display: block;
   background-image: url("../../assets/image/sprite.png");
-  background-position: -102px -30px;
+  background-position: -56px -102px;
   width: 18px;
   height: 18px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
+}
+
+.header .inner .btn-cont a .icon-more {
+  display: block;
+  background-image: url("../../assets/image/sprite.png");
+  background-position: 0px -102px;
+  width: 18px;
+  height: 18px;
+  background-size: 146px 120px;
 }
 
 .header .inner .btn-cont a:active .icon {
@@ -113,10 +135,10 @@
 .app-back .icon {
   display: block;
   background-image: url("../../assets/image/sprite.png");
-  background-position: -28px -102px;
+  background-position: -102px -60px;
   width: 18px;
   height: 18px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 .app-back:active {

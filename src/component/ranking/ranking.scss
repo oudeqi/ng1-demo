@@ -1,5 +1,7 @@
 @import "../../assets/scss/_mixin.scss";
 @import "../../assets/scss/_function.scss";
 #ranking{
-    // padding-top: px2rem(48);
+    &.hasHeader{
+        padding-top: px2rem(48);
+    }
 }

@@ -21,6 +21,10 @@
             flex-shrink: 0;
             width: px2rem(50);
             display: flex;
+            align-items: center;
+            &.cont-r{
+                justify-content: flex-end;
+            }
             a{
                 align-items: center;
                 justify-content: center;
@@ -29,6 +33,7 @@
                 padding: px2rem(10) px2rem(12);
                 .icon{
                     opacity: 0.6;
+                    transition: all 150ms ease-out;
                 }
                 .icon-back{
                     display: block;
@@ -37,6 +42,10 @@
                 .icon-close{
                     display: block;
                     @include sprite($icon-close);
+                }
+                .icon-more{
+                    display: block;
+                    @include sprite($icon-more);
                 }
                 &:active{
                     .icon{

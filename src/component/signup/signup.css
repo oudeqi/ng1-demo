@@ -4,6 +4,10 @@
   margin: 0 auto;
 }
 
+#signup.hasHeader {
+  padding-top: 3rem;
+}
+
 #signup .poster {
   width: 100%;
   background-color: #ddd;
@@ -44,10 +48,10 @@
 #signup .time p .icon {
   margin-right: 6px;
   background-image: url("../../assets/image/sprite.png");
-  background-position: -82px -102px;
+  background-position: -132px 0px;
   width: 14px;
   height: 14px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
@@ -131,10 +135,10 @@
 #signup .padd-cont .form-group .pic-view-list li .inner .content .delpic .icon {
   display: block;
   background-image: url("../../assets/image/sprite.png");
-  background-position: 0px 0px;
+  background-position: -68px 0px;
   width: 24px;
   height: 24px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 #signup .padd-cont .form-group .pic-view-list li .inner .content .addpic {
@@ -305,7 +309,7 @@
   background-position: -66px -68px;
   width: 20.5px;
   height: 20.5px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
   margin-right: 0.5rem;
 }
 

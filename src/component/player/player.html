@@ -1,6 +1,6 @@
 <div id="player" ng-controller="player">
-    <!-- <app-header back>详情</app-header> -->
-    <app-back></app-back>
+    <app-header ng-show="hasHeader" back>选手信息</app-header>
+    <app-back ng-show="!hasHeader"></app-back>
     <div class="base-info" ng-show="detail">
         <div class="row1">
             <h3 class="name">{{detail.name}}</h3>

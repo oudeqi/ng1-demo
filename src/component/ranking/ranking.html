@@ -1,5 +1,5 @@
-<div id="ranking" ng-controller="ranking">
-    <!-- <app-header close="close()">详情</app-header> -->
+<div id="ranking" ng-controller="ranking" ng-class="{'hasHeader':hasHeader}">
+    <app-header ng-show="hasHeader" close="close()" more="share()">投票</app-header>
     <div class="padd-cont">
         <div class="look-detail-btn">
             <a class="link" ui-sref="vote({id:{{id}}})">

@@ -132,6 +132,7 @@ input[type="number"]{
 	align-items: center;
 	margin-top: px2rem(20);
 	.ipt{
+		background: #fff;
 		flex-grow: 1;
 		margin-right: px2rem(10);
 		display: flex;
@@ -185,6 +186,7 @@ input[type="number"]{
 			border: 1px solid #dfdfdf;
 			border-radius: px2rem(3);
 			padding: px2rem(8);
+			background: #fff;
 			.pic{
 				height: px2rem(200);
 				width: 100%;

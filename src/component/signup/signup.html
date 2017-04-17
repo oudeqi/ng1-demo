@@ -1,6 +1,6 @@
-<div id="signup" ng-controller="signup">
-    <!-- <app-header back>详情</app-header> -->
-    <app-back></app-back>
+<div id="signup" ng-controller="signup" ng-class="{'hasHeader':hasHeader}">
+    <app-header ng-show="hasHeader" back>投票</app-header>
+    <app-back ng-show="!hasHeader"></app-back>
     <div class="poster">
         <img ng-src="{{detail.coverPhoto}}" alt="">
     </div>

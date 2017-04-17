@@ -4,6 +4,10 @@
   margin: 0 auto;
 }
 
+#vote.hasHeader {
+  padding-top: 3rem;
+}
+
 #vote .poster {
   width: 100%;
   background-color: #ddd;
@@ -35,10 +39,10 @@
   display: inline-block;
   vertical-align: middle;
   background-image: url("../../assets/image/sprite.png");
-  background-position: -56px -102px;
+  background-position: -84px -102px;
   width: 16px;
   height: 16px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 #vote .rule-list li .tit span {
@@ -50,7 +54,7 @@
 
 #vote .rule-list li .rule-cont {
   color: #686868;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 #vote .rule-list li .rule-cont p {

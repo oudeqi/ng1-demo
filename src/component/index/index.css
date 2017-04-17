@@ -1,3 +1,7 @@
+#index.hasHeader {
+  padding-top: 3rem;
+}
+
 #index .poster {
   width: 100%;
   background-color: #ddd;
@@ -45,10 +49,10 @@
   display: inline-block;
   vertical-align: middle;
   background-image: url("../../assets/image/sprite.png");
-  background-position: -82px -102px;
+  background-position: -132px 0px;
   width: 14px;
   height: 14px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 #index .padd-cont .tip .p1 .time {
@@ -87,7 +91,7 @@
   background-position: -34px -68px;
   width: 22px;
   height: 22px;
-  background-size: 122px 120px;
+  background-size: 146px 120px;
 }
 
 #index .padd-cont .tip .p2 .status {
@@ -97,12 +101,52 @@
   top: 1px;
 }
 
+#index .padd-cont .contact {
+  border: 1px solid #dfdfdf;
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.9rem 0;
+  color: #2b333b;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+#index .padd-cont .contact p {
+  line-height: 1.5;
+  font-size: 0.9375rem;
+  margin-top: 4px;
+}
+
+#index .padd-cont .theme {
+  border: 1px solid #dfdfdf;
+  margin-top: 1.25rem;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.9rem 0;
+  color: #2b333b;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+#index .padd-cont .theme h3 {
+  font-size: 1rem;
+}
+
+#index .padd-cont .theme p {
+  line-height: 1.5;
+  font-size: 0.9375rem;
+  padding: 0.625rem;
+  text-align: left;
+}
+
 #index .padd-cont .reward {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
   margin-top: 0.9375rem;
+  background: #fff;
 }
 
 #index .padd-cont .reward .reward-pic {
-  border-radius: 0.1875rem 0.1875rem 0 0;
   overflow: hidden;
   width: 100%;
   height: auto;
@@ -118,7 +162,6 @@
   padding: 0.625rem;
   border: 1px solid #dfdfdf;
   border-top: 0;
-  border-radius: 0 0 0.1875rem 0.1875rem;
 }
 
 #index .padd-cont .reward .reward-list li {
@@ -139,6 +182,7 @@
 
 #index .padd-cont .table-cont {
   margin-top: 0.9375rem;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
 }
 
 #index .padd-cont .table-cont table {
@@ -147,6 +191,7 @@
   text-align: center;
   color: #444;
   font-size: 0.875rem;
+  background: #fff;
 }
 
 #index .padd-cont .table-cont table tr {

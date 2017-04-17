@@ -22,6 +22,7 @@
             if(end == -1){
                 end = url.length;
             }
+            $rootScope.hasHeader = true;
             var paramStr = url.substring(start,end),
                 param = paramStr.split("&"),voteId,voteToken;
 
@@ -33,7 +34,11 @@
                 if(p[0] == "token"){
                     voteToken = p[1];
                 }
+                if(p[0] == "nh"){//nh无头
+                    $rootScope.hasHeader = false;
+                }
             }
+
             console.log("id+token:",voteId,voteToken);
             if(voteId){
                 localStorage.setItem("voteId",voteId);
@@ -49,7 +54,8 @@
             $rootScope.close = function(){
                 console.log("close");
                 if(typeof h5 == "object"){
-                    h5.backEvent();
+                    // h5.backEvent();
+                    h5.mallBack();
                 }else{
                     alert("缺少h5对象");
                 }

@@ -4,7 +4,9 @@
     max-width: 640px;
     min-width: 320px;
     margin: 0 auto;
-    // padding-top: px2rem(48);
+    &.hasHeader{
+        padding-top: px2rem(48);
+    }
     .poster{
         width: 100%;
         background-color: #ddd;
@@ -31,6 +33,15 @@
         color: #2B333B;
         text-align: center;
         padding: 0 px2rem(20);
+    }
+    .contact{
+        margin-top: px2rem(20);
+        font-size: px2rem(16);
+        color: #2B333B;
+        p{
+            text-align: center;
+            line-height: 1.5;
+        }
     }
     .btn{
         padding: px2rem(13);
