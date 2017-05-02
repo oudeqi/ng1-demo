@@ -5,13 +5,13 @@
 }
 
 #succ.hasHeader {
-  padding-top: 3rem;
+  padding-top: 3em;
 }
 
 #succ .poster {
   width: 100%;
   background-color: #ddd;
-  height: 11.25rem;
+  height: 11.25em;
   overflow: hidden;
 }
 
@@ -23,49 +23,50 @@
 }
 
 #succ .tit {
-  font-size: 1.25rem;
+  font-size: 1.25em;
   color: #2B333B;
   text-align: center;
-  padding: 1.25rem 0.8125rem;
-  padding-top: 1.875rem;
+  padding: 1.25em 0.8125em;
+  padding-top: 1.875em;
   line-height: 1;
 }
 
 #succ .desc {
-  font-size: 1rem;
+  font-size: 1em;
   line-height: 1.5;
   color: #2B333B;
   text-align: center;
-  padding: 0 1.25rem;
+  padding: 0 1.25em;
 }
 
 #succ .contact {
-  margin-top: 1.25rem;
-  font-size: 1rem;
+  margin-top: 1.25em;
+  font-size: 1em;
   color: #2B333B;
 }
 
 #succ .contact p {
   text-align: center;
   line-height: 1.5;
+  padding: 0 4px;
 }
 
 #succ .btn {
-  padding: 0.8125rem;
-  padding-top: 2.5rem;
+  padding: 0.8125em;
+  padding-top: 2.5em;
 }
 
 #succ .btn a {
   display: block;
   text-decoration: none;
   width: 100%;
-  height: 2.75rem;
-  line-height: 2.75rem;
+  height: 2.5em;
+  line-height: 2.5em;
   text-align: center;
   color: #fff;
-  font-size: 1.125rem;
+  font-size: 1.125em;
   background: #129AEE;
-  border-radius: 0.1875rem;
+  border-radius: 0.1875em;
   border: 0;
 }
 

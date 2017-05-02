@@ -19,38 +19,45 @@
                 url:""
             };
 
-            $http.get(HOST+"/v1/player/detail",{
-                params: {
-                    id: $scope.id
-                },
-                headers: {
-                    "Authorization": localStorage.getItem("voteToken")
-                }
-            }).then(function(res){
-                console.log("获取选手详情：",res);
-                $scope.detail = res.data.data;
-                serialNo = "我是 "+res.data.data.name+" "+res.data.data.seriaNumber+"号，";
-            }).catch(function(error){
-                console.log(error);
-            });
+            $scope.getPlayerDetail = function(){
+                $http.get(HOST+"/v1/player/detail",{
+                    params: {
+                        id: $scope.id
+                    },
+                    headers: {
+                        "Authorization": localStorage.getItem("voteToken")
+                    }
+                }).then(function(res){
+                    console.log("获取选手详情：",res);
+                    $scope.detail = res.data.data;
+                    serialNo = "我是 "+res.data.data.name+" "+res.data.data.seriaNumber+"号，";
+                }).catch(function(error){
+                    console.log(error);
+                });
+            };
+            $scope.getPlayerDetail();
 
-            $http.get(HOST+"/v1/vote/details",{
-                params: {
-                    id: localStorage.getItem("voteId")
-                },
-                headers: {
-                    "Authorization": localStorage.getItem("voteToken")
-                }
-            }).then(function(res){
-                console.log("获取活动详情：",res);
-                $scope.voteDetail = res.data.data;
-                $scope.shareDate.title = res.data.data.title;
-                actTit = "我正在参加“"+res.data.data.title +"”活动，快来帮我投票吧！";
-                $scope.shareDate.imageUrl = res.data.data.coverPhoto;
-                $scope.shareDate.url = "http://tpl.2tai.net/vote.share.html?id="+res.data.data.id;
-            }).catch(function(error){
-                console.log(error);
-            });
+            $scope.getVoteDetails = function(){
+                $http.get(HOST+"/v1/vote/details",{
+                    params: {
+                        id: localStorage.getItem("voteId")
+                    },
+                    headers: {
+                        "Authorization": localStorage.getItem("voteToken")
+                    }
+                }).then(function(res){
+                    console.log("获取活动详情：",res);
+                    $scope.voteDetail = res.data.data;
+                    $scope.shareDate.title = res.data.data.title;
+                    actTit = "我正在参加“"+res.data.data.title +"”活动，快来帮我投票吧！";
+                    $scope.shareDate.imageUrl = res.data.data.coverPhoto;
+                    $scope.shareDate.url = "http://tpl.2tai.net/vote.share.html?id="+res.data.data.id;
+                }).catch(function(error){
+                    console.log(error);
+                });
+            };
+            $scope.getVoteDetails();
+
 
             //分享
             $scope.share = function(){
@@ -82,8 +89,8 @@
          		}).then(function(res){
                     console.log("投票：",res);
                     if(res.data.data){
-                        item.canVote = 2;
-                        item.votes++;
+                        $scope.getPlayerDetail();
+                        $scope.getVoteDetails();
                     }else{
                         alert(res.data.errMessage);
                     }

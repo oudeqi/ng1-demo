@@ -6,11 +6,7 @@ html {
 	-ms-touch-action: none;
 	font-size: 16px;
 }
-@media screen and (max-width: 320px) {
-    html {
-		font-size: adaptPx(320);
-    }
-}
+
 @media screen and (min-width: 320px) {
     html {
 		font-size: adaptPx(320);
@@ -98,19 +94,19 @@ input[type="number"]{
 }
 
 .padd-cont{
-	padding: 0 px2rem(10);
+	padding: 0 px2em(10);
 }
 
 // 查看详情按钮
 .look-detail-btn{
-	margin-top: px2rem(20);
+	margin-top: px2em(20);
 	.link{
 		text-decoration: none;
 		display: flex;
 		background: #129AEE;
-		border-radius: px2rem(3);
+		border-radius: px2em(3);
 		width: 100%;
-		height: px2rem(40);
+		height: px2em(40);
 		color: #fff;
 		text-align: center;
 		justify-content: center;
@@ -130,20 +126,20 @@ input[type="number"]{
 .search-btn{
 	display: flex;
 	align-items: center;
-	margin-top: px2rem(20);
+	margin-top: px2em(20);
 	.ipt{
 		background: #fff;
 		flex-grow: 1;
-		margin-right: px2rem(10);
+		margin-right: px2em(10);
 		display: flex;
 		align-items: center;
-		padding-left: px2rem(10);
-		height: px2rem(40);
+		padding-left: px2em(10);
+		height: px2em(40);
 		border: 1px solid #dfdfdf;
-		border-radius: px2rem(3);
+		border-radius: px2em(3);
 		.icon{
 			flex-shrink: 0;
-			margin-right: px2rem(6);
+			margin-right: px2em(6);
 			@include sprite($icon-search);
 		}
 		input{
@@ -155,11 +151,11 @@ input[type="number"]{
 		flex-shrink: 0;
 		button{
 			color: #fff;
-			width: px2rem(80);
-			height: px2rem(40);
+			width: px2em(80);
+			height: px2em(40);
 			background: #FB4747;
 			border: 0;
-			border-radius: px2rem(3);
+			border-radius: px2em(3);
 			&:active{
 				opacity: 0.8;
 			}
@@ -170,28 +166,28 @@ input[type="number"]{
 // 选手列表
 .player-list{
 	@include clearfix();
-	margin-top: px2rem(20);
+	margin-top: px2em(20);
 	li{
 		float: left;
 		width: 50%;
-		margin-bottom: px2rem(10);
+		margin-bottom: px2em(10);
 		&:nth-child(odd){
-			padding-right: px2rem(5);
+			padding-right: px2em(5);
 		}
 		&:nth-child(even){
-			padding-left: px2rem(5);
+			padding-left: px2em(5);
 		}
 		.inner{
 			width: 100%;
 			border: 1px solid #dfdfdf;
-			border-radius: px2rem(3);
-			padding: px2rem(8);
+			border-radius: px2em(3);
+			padding: px2em(8);
 			background: #fff;
 			.pic{
-				height: px2rem(200);
+				height: px2em(200);
 				width: 100%;
 				overflow: hidden;
-				border-radius: px2rem(2);
+				border-radius: px2em(2);
 				background-color: #eee;
 				display: block;
 				img{
@@ -202,30 +198,43 @@ input[type="number"]{
 				}
 			}
 			.p1{
-				font-size: px2rem(14);
+				font-size: px2em(14);
 				color: #686868;
-				margin-top: px2rem(10);
+				margin-top: px2em(10);
+				display: flex;
+				span{
+					&:first-child{
+						flex-grow: 2;
+						flex-shrink: 1;
+						@include otw();
+					}
+					&:last-child{
+						flex-grow: 2;
+						word-break: keep-all;
+						flex-shrink: 0;
+					}
+				}
 			}
 			.p2{
-				font-size: px2rem(14);
+				font-size: px2em(14);
 				color: #686868;
-				line-height: px2rem(20);
-				margin-top: px2rem(3);
+				line-height: px2em(20);
+				margin-top: px2em(3);
 				strong{
 					background: #EBEBEB;
 					padding: 0 5px;
-					border-radius: px2rem(2);
+					border-radius: px2em(2);
 					font-weight: normal;
 				}
 			}
 			button{
-				margin-top: px2rem(8);
-				height: px2rem(30);
+				margin-top: px2em(8);
+				height: px2em(30);
 				text-align: center;
 				color: #fff;
 				border: 0;
 				width: 100%;
-				border-radius: px2rem(2);
+				border-radius: px2em(2);
 				&.countdown{
 					background-color: #FB4747;
 					cursor: not-allowed;
@@ -250,17 +259,17 @@ input[type="number"]{
 }
 // 加载更多
 .load-more,.load-all,.list-loading{
-	padding-top: px2rem(4);
-	padding-bottom: px2rem(15);
+	padding-top: px2em(4);
+	padding-bottom: px2em(15);
 	text-align: center;
 	color: #ccc;
 }
 .load-more{
-	font-size: px2rem(15);
+	font-size: px2em(15);
 }
 .load-all{
-	font-size: px2rem(14);
+	font-size: px2em(14);
 }
 .list-loading{
-	font-size: px2rem(15);
+	font-size: px2em(15);
 }

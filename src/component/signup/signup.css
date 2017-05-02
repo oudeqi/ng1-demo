@@ -5,13 +5,13 @@
 }
 
 #signup.hasHeader {
-  padding-top: 3rem;
+  padding-top: 3em;
 }
 
 #signup .poster {
   width: 100%;
   background-color: #ddd;
-  height: 11.25rem;
+  height: 11.25em;
   overflow: hidden;
 }
 
@@ -40,8 +40,8 @@
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-left: 0.625rem;
-  font-size: 0.9375rem;
+  padding-left: 0.625em;
+  font-size: 0.9375em;
   color: #666;
 }
 
@@ -66,16 +66,16 @@
 }
 
 #signup .time p:first-child {
-  padding-top: 0.875rem;
+  padding-top: 0.875em;
 }
 
 #signup .time p:last-child {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
+  padding-top: 0.625em;
+  padding-bottom: 0.625em;
 }
 
 #signup .padd-cont {
-  padding-bottom: 1.5625rem;
+  padding-bottom: 1.5625em;
 }
 
 #signup .padd-cont .form-group {
@@ -84,7 +84,7 @@
 
 #signup .padd-cont .form-group .form-label {
   color: #555;
-  font-size: 1rem;
+  font-size: 1em;
 }
 
 #signup .padd-cont .form-group .pic-view-list {
@@ -168,10 +168,10 @@
 }
 
 #signup .padd-cont .form-group .pic-view-list li .inner .content .addpic p {
-  font-size: 0.875rem;
+  font-size: 0.875em;
   text-align: center;
   color: #fff;
-  margin-top: 0.5rem;
+  margin-top: 0.5em;
   line-height: 1;
 }
 
@@ -179,8 +179,8 @@
   display: block;
   margin: 0 auto;
   border: 0;
-  height: 3.125rem;
-  width: 4.375rem;
+  height: 3.125em;
+  width: 4.375em;
   background: url(../../assets/image/add-pic.png) no-repeat center;
   background-size: cover;
   cursor: pointer;
@@ -222,7 +222,7 @@
 }
 
 #signup .padd-cont .form-group .form-tip {
-  font-size: 0.875rem;
+  font-size: 0.875em;
   line-height: 1;
   padding-top: 10px;
   color: rgba(255, 0, 0, 0.5);
@@ -233,10 +233,10 @@
 }
 
 #signup .padd-cont .form-group .form-ipt input {
-  padding: 0.625rem 0.375rem;
+  padding: 0.625em 0.375em;
   width: 100%;
   border: 1px solid #dfdfdf;
-  border-radius: 0.125rem;
+  border-radius: 0.125em;
 }
 
 #signup .padd-cont .form-group .form-ipt input:focus {
@@ -251,8 +251,8 @@
   width: 100%;
   display: block;
   border: 1px solid #dfdfdf;
-  border-radius: 0.125rem;
-  padding: 0.25rem 0.3125rem;
+  border-radius: 0.125em;
+  padding: 0.25em 0.3125em;
   resize: vertical;
 }
 
@@ -261,12 +261,12 @@
 }
 
 #signup .padd-cont .form-group .form-btn {
-  height: 2.75rem;
+  height: 2.5em;
   width: 100%;
   color: #fff;
   background: #129AEE;
-  border-radius: 0.125rem;
-  font-size: 1.125rem;
+  border-radius: 0.125em;
+  font-size: 1.125em;
   border: 0;
   text-decoration: none;
   display: -webkit-box;
@@ -310,7 +310,7 @@
   width: 20.5px;
   height: 20.5px;
   background-size: 146px 120px;
-  margin-right: 0.5rem;
+  margin-right: 0.5em;
 }
 
 #signup .padd-cont .form-group .form-btn.loading:active {

@@ -5,13 +5,13 @@
 }
 
 #vote.hasHeader {
-  padding-top: 3rem;
+  padding-top: 3em;
 }
 
 #vote .poster {
   width: 100%;
   background-color: #ddd;
-  height: 11.25rem;
+  height: 11.25em;
   overflow: hidden;
 }
 
@@ -24,7 +24,7 @@
 
 #vote .rule-list li {
   border-bottom: 1px dashed #BFBFBF;
-  padding-bottom: 1.25rem;
+  padding-bottom: 1.25em;
 }
 
 #vote .rule-list li:last-child {
@@ -32,7 +32,7 @@
 }
 
 #vote .rule-list li .tit {
-  padding-top: 1.25rem;
+  padding-top: 1.25em;
 }
 
 #vote .rule-list li .tit .icon {
@@ -48,7 +48,7 @@
 #vote .rule-list li .tit span {
   display: inline-block;
   vertical-align: middle;
-  font-size: 1rem;
+  font-size: 1em;
   color: #2b333b;
 }
 
@@ -58,23 +58,23 @@
 }
 
 #vote .rule-list li .rule-cont p {
-  padding-bottom: 0.125rem;
+  padding-bottom: 0.125em;
   line-height: 1.5;
-  font-size: 1rem;
+  font-size: 1em;
 }
 
 #vote .signup-btn {
-  padding: 0 0.625rem;
-  padding-bottom: 0.625rem;
+  padding: 0 0.625em;
+  padding-bottom: 0.625em;
 }
 
 #vote .signup-btn .btn {
-  height: 2.75rem;
+  height: 2.5em;
   width: 100%;
   color: #fff;
   background: #129AEE;
-  border-radius: 0.125rem;
-  font-size: 1.125rem;
+  border-radius: 0.125em;
+  font-size: 1.125em;
   border: 0;
   text-decoration: none;
   text-align: center;

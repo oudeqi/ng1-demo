@@ -11,7 +11,7 @@
         max-width: 640px;
         min-width: 320px;
         margin: 0 auto;
-        height: px2rem(50);
+        height: px2em(50);
         background: #fbfbfb;
         ul{
             display: flex;
@@ -42,7 +42,7 @@
                     }
                     span{
                         color: #848689;
-                        font-size: px2rem(12);
+                        font-size: px2em(12);
                         display: block;
                         margin-top: 4px;
                         line-height: 1;

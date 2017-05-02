@@ -11,15 +11,15 @@
         max-width: 640px;
         min-width: 320px;
         margin: 0 auto;
-        height: px2rem(48);
+        height: px2em(48);
         background: #fbfbfb;
         border-bottom: 1px solid #eee;
         display: flex;
         align-items: center;
-        padding: 0 px2rem(2);
+        padding: 0 px2em(2);
         .btn-cont{
             flex-shrink: 0;
-            width: px2rem(50);
+            width: px2em(50);
             display: flex;
             align-items: center;
             &.cont-r{
@@ -30,7 +30,7 @@
                 justify-content: center;
                 text-decoration: none;
                 color: #666;
-                padding: px2rem(10) px2rem(12);
+                padding: px2em(10) px2em(12);
                 .icon{
                     opacity: 0.6;
                     transition: all 150ms ease-out;
@@ -56,7 +56,7 @@
         }
         .head-tit{
             flex-grow: 1;
-            font-size: px2rem(18);
+            font-size: px2em(18);
             color: #2B333B;
             text-align: center;
         }
@@ -68,11 +68,11 @@
     width: 2.6rem;
     height: 2.6rem;
     border-radius: 50%;
-    padding-right: px2rem(4);
+    padding-right: px2em(4);
     background-color: rgba(0,0,0,0.3);
     position: fixed;
-    top: px2rem(10);
-    left: px2rem(10);
+    top: px2em(10);
+    left: px2em(10);
     z-index: 1000;
     display: flex;
     justify-content: center;
